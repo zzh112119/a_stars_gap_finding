@@ -76,6 +76,7 @@ def find_gap():
     gaps_pub = rospy.Publisher('lidar_gap', gaps, queue_size=1000)
     center_pub = rospy.Publisher('gap_center', Vector3, queue_size=1000)
     rate = rospy.Rate(10) # 10hz
+    print("The code is rolling!")
     while not rospy.is_shutdown():
         gaps_pub.publish(found_gaps)
         center_pub.publish(gap_center)
